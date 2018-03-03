@@ -83,22 +83,23 @@ articleView.initNewArticlePage = () => {
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
   $('#export-field').hide();
 
+  // DONE: Add an event handler to update the preview and the export field if any inputs change.
   $('#article-json').on('focus', function(){
     this.select();
   });
 
-  // TODO: Add an event handler to update the preview and the export field if any inputs change.
-  //$('#new-form').on(event, optional delegation, callback);
+  $('#new-form').on('change', 'input, textarea', articleView.create);
 };
 
 articleView.create = () => {
   // DONE: Set up a variable to hold the new article we are creating.
 
   // Clear out the #articles element, so we can put in the updated preview
+  let article;
   $('#articles').empty();
 
   // DONE: Instantiate an article based on what's in the form fields:
-  let article = new Article({
+  article = new Article({
     title: $('#article-title').val(),
     author: $('#article-author').val(),
     authorUrl: $('#article-authorUrl').val(),
@@ -116,7 +117,8 @@ articleView.create = () => {
   });
 
   // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-  $('#article-json').val(JSON.stringify(article));
+  $('#export-field').show();
+  $('#article-json').val(`${JSON.stringify(article)},`);
 
 };
 

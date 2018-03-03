@@ -43,8 +43,8 @@
         </ul>
       </nav>
     </header>
-    <main class="clearfix">
 
+    <main class="clearfix">
       <section id="write" class="tab-content">
         <h1>Create New Article</h1>
         <!-- DONE: Set up a form to accept user input for a new blog article. Remember that we need:
@@ -54,7 +54,7 @@
            4. Author's URL
            5. Article category
            6. Some way to know if this article is a draft or is published -->
-           <form id="new-form">
+           <form action="#" id="new-form">
              <label>
                 <input type="text" id="article-title" placeholder="Article Title" required>
              </label>
@@ -71,9 +71,6 @@
              <label>
                <input type="checkbox" id="article-published">Published
              </label>
-             <label>
-                <button id="submit">Submit</button>
-             </label>
            </form>
       </section>
 
@@ -83,9 +80,10 @@
 
       <section id="article-export">
         <!-- DONE: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
-        <label id="export-field" class="pull-right" for"article-json">
+        <label id="export-field" for"article-json" class="pull-right" >
           <input type="text" readonly id="article-json">
         </label>
+      </section>
 
     </main>
     <footer>
@@ -95,6 +93,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <!-- NOTE (stretch goal): Include script tags for 3rd party libraries to enable Markdown rendering and code syntax highlighting. Use the minified CDN. Keep in mind that if we want these features to render properly on our main blog page (index.html) that we'll need to add those scripts over there, too. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
